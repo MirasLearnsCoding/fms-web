@@ -8,6 +8,8 @@ import HomePage from './pages/HomePage';
 import SelectRole from './pages/SelectRole';
 import GetStartedBuyer from './pages/GetStartedBuyer';
 import GetStartedFarmer from './pages/GetStartedFarmer';
+import Navbar from './components/Navbar';
+import About from './pages/About';
 
 
 
@@ -31,8 +33,9 @@ function App() {
   
   const router = createBrowserRouter(
     createRoutesFromElements (
-      <Route path='/' >
+      <Route path='/' element={<Navbar/>}>
         <Route index element={<HomePage/>}/>
+        <Route path = '/about' element={<About/>} />
         <Route path = '/select-role' element={<SelectRole/>} />
         <Route path = '/get-started-buyer' element={<GetStartedBuyer addBuyerSubmit={addBuyer}/>} />
         <Route path = '/get-started-farmer' element={<GetStartedFarmer/>} />
